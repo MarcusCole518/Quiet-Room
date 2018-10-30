@@ -17,19 +17,30 @@ firebase.initializeApp(config);
 class App extends Component {
 
   state = {
-    activeRoom: RoomList
+    activeRoom: ""
   }
 
-  roomChangeHandler(room) {
-    this.setState({activeRoom: room})
+  roomChangeHandler(e) {
+    this.setState({activeRoom: e});
   }
 
   render() {
+    console.log(this.state.activeRoom.name)
     return (
       <div className="App">
         <header className="App-header">
-          <RoomList firebase ={firebase} />
-          <MessageList firebase={firebase} />
+        <div>
+          <RoomList
+            firebase ={firebase}
+            roomChanged={this.roomChangeHandler.bind(this)}
+            activeRoom={this.state.activeRoom.name} />
+        </div>
+        <div>
+          <MessageList
+            firebase={firebase}
+            activeRoom={this.state.activeRoom.name}
+            roomChanged={this.roomChangeHandler.bind(this)} />
+        </div>
         </header>
       </div>
     );

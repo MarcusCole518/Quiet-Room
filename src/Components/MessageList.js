@@ -23,9 +23,9 @@ class MessageList extends Component {
         return(
             <div>
                 {
-                    this.state.messages.map( (messages, index) =>
-                    <div key={index} onClick={this.roomChangeHandler}>{messages.content}</div>
-                     )}
+                    this.state.messages.filter(message => this.props.activeRoom === message.roomID).map( (messages, index) =>
+                    <p key={index}>{messages.content}</p>
+                    )}
             </div>
         )
     }
