@@ -17,7 +17,11 @@ firebase.initializeApp(config);
 class App extends Component {
 
   state = {
-    activeRoom: ""
+    activeRoom: {
+      name: "",
+      roomID: "",
+      roomName: ""
+    }
   }
 
   roomChangeHandler(e) {
@@ -25,7 +29,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.activeRoom.name)
+    // console.log(this.state.activeRoom.name)
     return (
       <div className="App">
         <header className="App-header">
@@ -38,7 +42,7 @@ class App extends Component {
         <div>
           <MessageList
             firebase={firebase}
-            activeRoom={this.state.activeRoom.name}
+            activeRoom={this.state.activeRoom}
             roomChanged={this.roomChangeHandler.bind(this)} />
         </div>
         </header>

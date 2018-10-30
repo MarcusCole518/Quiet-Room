@@ -6,7 +6,8 @@ class RoomList extends Component {
         super(props);
         this.state = {
             rooms: [],
-            newRoomName: ""
+            newRoomName: "",
+            roomID: ""
         }
         this.roomsRef =  this.props.firebase.database().ref('rooms');
         this.handleChange = this.handleChange.bind(this);
