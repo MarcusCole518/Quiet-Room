@@ -30,8 +30,8 @@ class App extends Component {
     this.setState({activeRoom: e});
   }
 
-  setUser() {
-    this.setState({user: this.state.user})
+  setUser(user) {
+    this.setState({user: user})
   }
 
   render() {
@@ -54,7 +54,8 @@ class App extends Component {
         <div>
           <User
           firebase={firebase}
-          setUser={this.setUser.bind(this)} />
+          setUser={this.setUser.bind(this)}
+          user={this.state.user} />
         </div>
         </header>
       </div>
