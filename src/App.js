@@ -3,6 +3,7 @@ import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './Components/RoomList';
 import MessageList from './Components/MessageList';
+import User from './Components/User';
 
 var config = {
   apiKey: "AIzaSyDj7sIyMaeeHqK80p9zRlKcwIIn6D-UGcI",
@@ -21,15 +22,20 @@ class App extends Component {
       name: "",
       roomID: "",
       roomName: ""
-    }
+    },
+    user: null
   }
 
   roomChangeHandler(e) {
     this.setState({activeRoom: e});
   }
 
+  setUser() {
+    this.setState({user: this.state.user})
+  }
+
   render() {
-    // console.log(this.state.activeRoom.name)
+    console.log(this.state.activeRoom.name)
     return (
       <div className="App">
         <header className="App-header">
@@ -44,6 +50,11 @@ class App extends Component {
             firebase={firebase}
             activeRoom={this.state.activeRoom}
             roomChanged={this.roomChangeHandler.bind(this)} />
+        </div>
+        <div>
+          <User
+          firebase={firebase}
+          setUser={this.setUser.bind(this)} />
         </div>
         </header>
       </div>
