@@ -21,7 +21,7 @@ class MessageList extends Component {
             sentAt: this.state.sentAt,
             content: this.state.newMessage,
             username: this.props.user.displayName,
-            roomID: this.state.roomID
+            roomID: this.props.activeRoom.key
         });
     }
 
@@ -53,14 +53,12 @@ class MessageList extends Component {
     render() {
         return(
             <div>
-                <h1 className="heading-main">Bloc Chat</h1>
+                <h1 className="heading-main">Quiet Room</h1>
                 <div className="message-box">
+                <p className="username">{this.displayName()}:</p>
                     {
-                        this.state.messages.filter( message => this.props.activeRoom.roomID === message.roomID).map( (messages, index) =>
-                        <div>
-                            <p className="username">{this.displayName()}:</p>
-                            <p className="container"key={index}>{messages.content}</p>
-                        </div>
+                        this.state.messages.filter( message => this.props.activeRoom.key === message.roomID).map( (messages, index) =>
+                            <p key={index+1} className="container">{messages.content}</p>
                     )}
                     <form onSubmit={this.createMessage}>
                         <label className="new-message">New Message:
