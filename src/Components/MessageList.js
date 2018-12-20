@@ -55,7 +55,7 @@ class MessageList extends Component {
             <div>
                 <h1 className="heading-main">Quiet Room</h1>
                 <div className="message-box">
-                <p className="username">{this.displayName()}:</p>
+                <p className="username">{this.props.activeRoom.name}</p>
                     {
                         this.state.messages.filter( message => this.props.activeRoom.key === message.roomID).map( (messages, index) =>
                             <p key={index+1} className="container">{messages.content}</p>
