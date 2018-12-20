@@ -49,7 +49,6 @@ class App extends Component {
           <MessageList
             firebase={firebase}
             activeRoom={this.state.activeRoom}
-            roomChanged={this.roomChangeHandler.bind(this)}
             user={this.state.user} />
         </div>
         <div>
