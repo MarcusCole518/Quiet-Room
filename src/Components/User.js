@@ -35,9 +35,9 @@ class User extends Component {
     render() {
         return(
             <div>
-                <p>Username: {this.displayName()}</p>
-                <button className="sign-in" onClick={this.signIn}>Sign In</button>
-                <button className="sign-out" onClick={this.signOut}>Sign Out</button>
+                <p className="lead">Username: {this.displayName()}</p>
+                <button className="sign-in btn btn-success" onClick={this.signIn}>Sign In</button>
+                <button className="sign-out btn btn-danger" onClick={this.signOut}>Sign Out</button>
             </div>
         )
     }

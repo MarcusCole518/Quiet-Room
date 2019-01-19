@@ -61,10 +61,12 @@ class MessageList extends Component {
                             <p key={index+1} className="container">{messages.content}</p>
                     )}
                     <form onSubmit={this.createMessage}>
-                        <label className="new-message">New Message:
-                            <input type="text-box" className="message" value={this.state.newMessage} onChange={this.handleNewMessage} />
-                        </label>
-                        <input type="submit" value="submit" />
+                        <div className="form-group">
+                            <label className="new-message">New Message:
+                                <input type="text-box" className="form-control" value={this.state.newMessage} onChange={this.handleNewMessage} />
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">submit</button>
                     </form>
                 </div>
             </div>

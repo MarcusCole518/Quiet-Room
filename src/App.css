@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Squada+One);
 
 body {
-  background-color:  #6b9cc5b6;
+  background-color:  #6b9cc5b6 !important;
 }
 
 .App {
@@ -35,6 +35,14 @@ body {
   position: fixed;
   height: 100vh;
   overflow: auto;
+}
+
+form {
+  margin-left: 12%;
+}
+
+form button {
+  margin-right: 14%;
 }
 
 .room-num {
@@ -211,4 +219,8 @@ body {
   color: #223254;
   transition: all .15s ease;
   margin-top: 10px;
+}
+
+.form-group {
+  margin-right: 225px;
 }
