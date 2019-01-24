@@ -22,7 +22,7 @@ Project is created with:
 To run this project, install it locally using npm:
 
 ```
-$ cd ../bloc-chat
+$ cd ../bloc-jams-react
 $ npm install
 $ npm start
 ```
