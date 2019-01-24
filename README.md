@@ -12,8 +12,11 @@
 	
 ## Technologies
 Project is created with:
+
+```
 * React: 16.5
 * Bootstrap: 4.2.1
+```
 	
 ## Setup
 To run this project, install it locally using npm:
